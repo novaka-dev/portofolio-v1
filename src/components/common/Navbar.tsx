@@ -13,7 +13,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { ModeToggle } from "./ModeTogle";
-import { DATA } from "../config/Navbar";
+import { DATA } from "../../config/Navbar";
 import { Container } from "./Container";
 import { usePathname } from "next/navigation";
 
