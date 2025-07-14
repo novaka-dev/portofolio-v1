@@ -15,8 +15,10 @@ import { Dock, DockIcon } from "@/components/magicui/dock";
 import { ModeToggle } from "./ModeTogle";
 import { DATA } from "../config/Navbar";
 import { Container } from "./Container";
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
+  const pathname = usePathname();
   return (
     <Container className="flex items-center justify-center">
       <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
@@ -31,7 +33,9 @@ export function Navbar() {
                       aria-label={item.label}
                       className={cn(
                         buttonVariants({ variant: "ghost", size: "icon" }),
-                        "size-12 rounded-full"
+                        "size-12 rounded-full ",
+                        pathname === item.href &&
+                          "bg-accent text-accent-foreground transition-colors duration-500"
                       )}
                     >
                       <item.icon className="size-4" />
@@ -44,23 +48,49 @@ export function Navbar() {
               </DockIcon>
             ))}
             <Separator orientation="vertical" className="h-full" />
-            {DATA.work.map((item) => (
-              <DockIcon key={item.label}>
+            {Object.entries(DATA.work.portofolio).map(([name, portofolio]) => (
+              <DockIcon key={name}>
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Link
-                      href={item.href}
-                      aria-label={item.label}
+                      href={portofolio.url}
+                      aria-label={portofolio.name}
                       className={cn(
                         buttonVariants({ variant: "ghost", size: "icon" }),
-                        "size-12 rounded-full"
+                        "size-12 rounded-full transition-colors duration-500",
+                        pathname === portofolio.url &&
+                          "bg-accent text-accent-foreground"
                       )}
                     >
-                      <item.icon className="size-4" />
+                      <portofolio.icon className="size-4" />
                     </Link>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>{item.label}</p>
+                    <p>{portofolio.name}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </DockIcon>
+            ))}
+            <Separator orientation="vertical" className="h-full py-2" />
+            {Object.entries(DATA.contact.social).map(([name, social]) => (
+              <DockIcon key={name}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Link
+                      href={social.url}
+                      aria-label={social.name}
+                      className={cn(
+                        buttonVariants({ variant: "ghost", size: "icon" }),
+                        "size-12 rounded-full transition-colors duration-500",
+                        pathname === social.url &&
+                          "bg-accent text-accent-foreground"
+                      )}
+                    >
+                      <social.icon className="size-4" />
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{social.name}</p>
                   </TooltipContent>
                 </Tooltip>
               </DockIcon>

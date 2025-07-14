@@ -13,7 +13,7 @@ const Icons = {
   calendar: (props: IconProps) => <CalendarIcon {...props} />,
   email: (props: IconProps) => <MailIcon {...props} />,
   work: (props: IconProps) => <BriefcaseBusiness {...props} />,
-  blogs: (props: IconProps) => <BookText {...props} />,
+  blog: (props: IconProps) => <BookText {...props} />,
   project: (props: IconProps) => <FolderCode {...props} />,
   linkedin: (props: IconProps) => (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -57,12 +57,29 @@ const Icons = {
 };
 
 export const DATA = {
-  navbar: [{ href: "#", icon: HomeIcon, label: "Home" }],
-  work: [
-    { href: "#", icon: BriefcaseBusiness, label: "Work" },
-    { href: "#", icon: BookText, label: "Blogs" },
-    { href: "#", icon: FolderCode, label: "Projects" },
-  ],
+  navbar: [{ href: "/", icon: HomeIcon, label: "Home" }],
+  work: {
+    portofolio: {
+      WorkExperience: {
+        name: "Work Experience",
+        url: "/work-experience",
+        icon: Icons.work,
+      },
+      Blog: {
+        name: "Blogs",
+        url: "/blog",
+        icon: Icons.blog,
+      },
+      Project: {
+        name: "Projects",
+        url: "/project",
+        icon: Icons.project,
+      },
+    },
+  },
+  // { href: "/work-experience", icon: BriefcaseBusiness, label: "Work" },
+  // { href: "/blog", icon: BookText, label: "Blogs" },
+  // { href: "/project", icon: FolderCode, label: "Projects" },
   contact: {
     social: {
       GitHub: {
