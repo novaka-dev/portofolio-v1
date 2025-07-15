@@ -103,7 +103,7 @@ export function Navbar() {
                     <ModeToggle />
                   </span>
                 </TooltipTrigger>
-                <TooltipContent side="bottom">
+                <TooltipContent side="top">
                   <p>Theme</p>
                 </TooltipContent>
               </Tooltip>

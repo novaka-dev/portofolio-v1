@@ -15,7 +15,7 @@ export function ModeToggle() {
 
   return (
     <Button
-      className="size-12 rounded-full"
+      className="size-12 rounded-full transition-colors duration-500"
       variant="ghost"
       size="icon"
       aria-label="Toggle theme"

@@ -92,11 +92,11 @@ export const DATA = {
         url: "#",
         icon: Icons.linkedin,
       },
-      X: {
-        name: "X",
-        url: "#",
-        icon: Icons.x,
-      },
+      // X: {
+      //   name: "X",
+      //   url: "#",
+      //   icon: Icons.x,
+      // },
       email: {
         name: "Send Email",
         url: "#",
