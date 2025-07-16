@@ -1,6 +1,6 @@
 export default function NextJs() {
   return (
-    <svg viewBox="0 0 128 128">
+    <svg viewBox="0 0 128 128" className="w-full h-full">
       <circle cx="64" cy="64" r="64"></circle>
       <path
         fill="url(#a)"

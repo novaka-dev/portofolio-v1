@@ -1,5 +1,7 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
 
 type SpotlightProps = {
   className?: string;
@@ -7,10 +9,19 @@ type SpotlightProps = {
 };
 
 export const Spotlight = ({ className, fill }: SpotlightProps) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+  const { theme } = useTheme();
+
+  const dynamicFill =
+    fill || (!mounted ? "white" : theme === "dark" ? "white" : "#FFD700"); //#FFD700 #00FFFF
+
   return (
     <svg
       className={cn(
-        "animate-spotlight pointer-events-none absolute z-[1]  h-[169%] w-[138%] lg:w-[84%] opacity-0",
+        "animate-spotlight pointer-events-none absolute z-[1] opacity-0",
+        "w-[400vh] h-[100vh] min-w-[400px] min-h-[400px] max-w-[1000px] max-h-[800px]",
         className
       )}
       xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +35,7 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
           rx="1924.71"
           ry="273.501"
           transform="matrix(-0.822377 -0.568943 -0.568943 0.822377 3631.88 2291.09)"
-          fill={fill || "white"}
+          fill={dynamicFill || "white"}
           fillOpacity="0.21"
         ></ellipse>
       </g>

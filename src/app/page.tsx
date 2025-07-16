@@ -1,10 +1,11 @@
-import { Container } from "@/components/common/Container";
+import About from "@/components/landing/About";
 import Hero from "@/components/landing/Hero";
 
 export default function Home() {
   return (
-    <Container className="min-h-screen py-16">
+    <main className="min-h-screen flex flex-col">
       <Hero />
-    </Container>
+      <About />
+    </main>
   );
 }
