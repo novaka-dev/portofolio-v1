@@ -3,6 +3,7 @@ import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/common/ThemeProvider";
 import { Navbar } from "@/components/common/Navbar";
+import FlyingDragon from "@/components/common/FlyingDragon";
 
 const hankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
@@ -28,8 +29,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar/>
+          <Navbar />
           {children}
+          <FlyingDragon /> {/* ✅ Tambahin ini */}
         </ThemeProvider>
       </body>
     </html>
