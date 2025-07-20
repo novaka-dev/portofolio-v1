@@ -115,7 +115,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
             ))}
           </Timeline>
         ) : (
-          <div className="relative pl-10 md:pl-7 border-l-[2px] border-dashed border-muted">
+          <div className="relative pl-10 md:pl-7 border-l-[2px] border-dashed border-zinc-700">
             <div className="flex flex-col gap-6 mt-2">
               {experience.description.map((descItem, descIndex) => (
                 <div key={descIndex} className="relative group">
