@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/common/ThemeProvider";
 import { Navbar } from "@/components/common/Navbar";
 import FlyingDragon from "@/components/common/FlyingDragon";
+import Experience from "@/components/landing/Experience";
 
 const hankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <FlyingDragon /> {/* ✅ Tambahin ini */}
+          <Experience />
         </ThemeProvider>
       </body>
     </html>

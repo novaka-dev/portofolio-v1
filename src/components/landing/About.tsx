@@ -4,6 +4,7 @@ import SectionHeading from "../common/SectionHeading";
 import { Tilt } from "../motion-primitives/tilt";
 import { PointerHighlight } from "../ui/pointer-highlight";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { Meteors } from "../magicui/meteors";
 
 export default function About() {
   return (
@@ -12,7 +13,8 @@ export default function About() {
       <div className="pointer-events-none absolute inset-0 top-0 left-0 w-full h-48 bg-gradient-to-b from-white/90 to-transparent dark:from-black/90 z-0" />
 
       {/* Konten dibungkus Container */}
-      <Container className="relative z-10 mt-20">
+      <Container className="relative z-10 mt-20 overflow-hidden">
+        <Meteors />
         <SectionHeading heading="Me" subHeading="About" />
         <div className="flex flex-col md:flex-row gap-4">
           <Tilt rotationFactor={8} isRevese className="mt-4 flex-shrink w-75">

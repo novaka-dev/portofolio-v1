@@ -71,7 +71,8 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 z-10 bg-white dark:bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
       {/* ✅ Bottom Gradient untuk transisi ke About */}
-      <div className="pointer-events-none absolute bottom-0 left-0 w-full h-36 bg-gradient-to-b from-transparent to-black dark:to-black z-10" />
+      <div className="pointer-events-none absolute bottom-0 left-0 w-full h-36 bg-gradient-to-b from-transparent to-transparent dark:to-black z-10" />
+
       <Container className="mb-14">
         {/* ✅ Spotlight (masih bisa pakai absolute) */}
         <Spotlight
@@ -143,7 +144,7 @@ export default function Hero() {
                 {socialLinks.map((link) => (
                   <Link href={link.href} key={link.name}>
                     <CardSpotlight className="lg:min-w-[140px] md:min-w-[150px] max-w-[140px] shadow-xl light:bg-neutral-800">
-                      <span className="text-white flex items-center justify-center mx-auto w-14 h-14">
+                      <span className="text-white flex items-center justify-center mx-auto w-14 h-14 ">
                         {link.icon}
                       </span>
                       <p className="text-center text-white">{link.name}</p>

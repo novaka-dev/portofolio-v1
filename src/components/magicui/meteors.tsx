@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "/lib/utils";
+import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 
 interface MeteorsProps {
@@ -19,7 +19,7 @@ export const Meteors = ({
   maxDelay = 1.2,
   minDuration = 2,
   maxDuration = 10,
-  angle = 215,
+  angle = 420,
   className,
 }: MeteorsProps) => {
   const [meteorStyles, setMeteorStyles] = useState<Array<React.CSSProperties>>(
