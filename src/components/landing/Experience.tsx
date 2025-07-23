@@ -8,7 +8,7 @@ import GithubCard from "../experience/GithubCard";
 
 export default function Experience() {
   return (
-    <section className="relative isolate overflow-hidden min-h-screen">
+    <section className="relative isolate overflow-hidden ">
       <Container className="mt-10">
         <SectionHeading heading="Experience" subHeading="My Journey" />
         <div className=" gap-8 mt-4 flex flex-col">

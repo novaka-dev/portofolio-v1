@@ -56,14 +56,14 @@ export default function Hero() {
   // Link preview,
 
   return (
-    <section className="relative isolate overflow-hidden py-10 min-h-screen">
+    <section className="relative isolate overflow-hidden py-10">
       {/* ✅ Grid Background (penuh layar) */}
       <div
         className={cn(
           "pointer-events-none absolute inset-0 z-0 opacity-50",
           "[background-size:40px_40px]",
           "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
-          "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]"
+          "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
         )}
       />
 
@@ -81,7 +81,7 @@ export default function Hero() {
             "-top-44 left-[-50px]", // Default (mobile)
             "sm:-top-36 sm:left-10", // Small screen
             "md:-top-28 md:left-32", // Medium screen
-            "lg:-top-20 lg:left-60" // Large screen
+            "lg:-top-20 lg:left-60", // Large screen
           )}
         />
 

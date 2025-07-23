@@ -8,7 +8,7 @@ import { Meteors } from "../magicui/meteors";
 
 export default function About() {
   return (
-    <section className="relative isolate overflow-hidden min-h-screen">
+    <section className="relative isolate overflow-hidden ">
       {/* Gradasi vertikal (atas ke bawah) */}
       <div className="pointer-events-none absolute inset-0 top-0 left-0 w-full h-48 bg-gradient-to-b from-white/90 to-transparent dark:from-black/90 z-0" />
 
