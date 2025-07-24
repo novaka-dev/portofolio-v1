@@ -13,7 +13,7 @@ export default function About() {
       <div className="pointer-events-none absolute inset-0 top-0 left-0 w-full h-48 bg-gradient-to-b from-white/90 to-transparent dark:from-black/90 z-0" />
 
       {/* Konten dibungkus Container */}
-      <Container className="relative z-10 mt-20 overflow-hidden">
+      <Container className="relative z-10 mt-20 overflow-hidden mb-10">
         <Meteors />
         <SectionHeading heading="Me" subHeading="About" />
         <div className="flex flex-col md:flex-row gap-4">
