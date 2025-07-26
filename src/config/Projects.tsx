@@ -6,13 +6,15 @@ import Supabase from "@/components/technologies/Supabase";
 import TailwindCss from "@/components/technologies/TailwindCss";
 import TypeScript from "@/components/technologies/TypeScript";
 import Vercel from "@/components/technologies/Vercel";
+import { Project } from "@/types/project";
 
-export const projects = [
+export const projects: Project[] = [
   {
     title: "Masjid Finance",
-    description: "...",
-    image: "",
-    video: "",
+    description:
+      "Model Context Protocol server for seamless Appwrite database operations with 7 powerful tools and 99.9% success rate",
+    image: "/project/quest.png",
+    video: "https://ik.imagekit.io/hokb3mrdr/notesbuddy.mp4?tr=orig",
     link: "",
     technologies: [
       { name: "Next.js", icon: <NextJs key={"nextjs"} /> },

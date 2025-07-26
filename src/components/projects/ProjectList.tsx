@@ -1,0 +1,19 @@
+import { Project } from "@/types/project";
+import ProjectCard from "./ProjectCard";
+
+interface ProjectListProps {
+  projects: Project[];
+  className?: string;
+}
+
+export default function ProjectList({ projects, className }: ProjectListProps) {
+  return (
+    <div
+      className={`grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 ${className}`}
+    >
+      {projects.map((project: Project) => (
+        <ProjectCard key={project.title} project={project} />
+      ))}
+    </div>
+  );
+}
