@@ -33,7 +33,7 @@ export default function GithubCard() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch ">
       {/* Card kiri - Profile */}
-      <div className="md:col-span-3 " >
+      <div className="md:col-span-3 ">
         <Card className="relative overflow-hidden p-4 h-full">
           <ShineBorder shineColor={["#9333EA", "#BE185D"]} />
 
@@ -76,6 +76,7 @@ export default function GithubCard() {
             <div className="overflow-hidden">
               <GitHubCalendar
                 username="novaka-dev"
+                year={"last"}
                 blockSize={10}
                 blockMargin={4}
                 colorScheme="dark"

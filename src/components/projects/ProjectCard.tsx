@@ -32,7 +32,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {project.video && (
             <Dialog>
               <DialogTrigger asChild>
-                <div className="absolute inset-0 flex items-center justify-center cursor-pointer bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100 hover:backdrop-blur-xs tra">
+                <div className="absolute inset-0 flex items-center justify-center cursor-pointer bg-black/20 opacity-0 transition-all duration-300 group-hover:opacity-100 hover:backdrop-blur-xs backdrop-blur-none">
                   <button className="flex items-center size-12 justify-center rounded-full bg-white/20 backdrop-blur-sm transition-colors duration-200 group-hover:cursor-pointer hover:bg-white/30">
                     <PlayCircle className="size-10" />
                   </button>
@@ -143,7 +143,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             )}
           </div>
           <Link
-            href={project.projectDetailSlug}
+            href={project.projectDetailsPageSlug}
             className="flex items-center gap-2 text-muted-foreground text-sm hover:text-primary transition-colors hover:underline underline-offset-4"
           >
             View Details <ArrowRight className="size-4" />

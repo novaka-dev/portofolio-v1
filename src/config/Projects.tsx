@@ -28,7 +28,7 @@ export const projects: Project[] = [
     ],
     github: "",
     live: "",
-    projectDetailSlug: "",
+    projectDetailsPageSlug: "/project/masjid-finance",
     detail: true,
     isWorking: true,
   },
