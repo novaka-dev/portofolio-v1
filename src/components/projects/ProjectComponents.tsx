@@ -342,6 +342,19 @@ export const ProjectComponents = {
     </blockquote>
   ),
 
+  // ⬇️ Tambahkan ini
+  strong: ({
+    children,
+    ...props
+  }: {
+    children: React.ReactNode;
+    [key: string]: unknown;
+  }) => (
+    <strong className="text-foreground font-bold" {...props}>
+      {children}
+    </strong>
+  ),
+
   // Project-specific components
   Technology,
   TechStack,
