@@ -32,4 +32,43 @@ export const projects: Project[] = [
     detail: true,
     isWorking: true,
   },
+  {
+    title: "I'm a chill guy",
+    description:
+      "AI-powered GitHub profile roaster with intelligent analysis, witty commentary, and social sharing features",
+    image: "/project/chillguy.png",
+    link: "https://chillguy.ramx.in",
+    technologies: [
+      { name: "React", icon: <ReactIcon key="react" /> },
+
+      { name: "Vercel", icon: <Vercel key="vercel" /> },
+      { name: "Tailwind CSS", icon: <TailwindCss key="tailwindcss" /> },
+    ],
+    github: "https://github.com/ramxcodes/chill-guy",
+    live: "https://chillguy.ramx.in",
+    detail: true,
+    projectDetailsPageSlug: "/project/chill-guy",
+    isWorking: true,
+  },
+  {
+    title: "Intent JS",
+    description:
+      "Modern JavaScript library website with advanced animations, interactive playground, and comprehensive documentation",
+    image: "/project/intent.png",
+    video: "https://ik.imagekit.io/hokb3mrdr/intent.mp4",
+    link: "https://intent-js.ramx.in",
+    technologies: [
+      { name: "Next.js", icon: <NextJs key="nextjs" /> },
+      { name: "TypeScript", icon: <TypeScript key="typescript" /> },
+      { name: "React", icon: <ReactIcon key="react" /> },
+
+      { name: "Tailwind CSS", icon: <TailwindCss key="tailwindcss" /> },
+      { name: "shadcn/ui", icon: <Shadcn key="shadcn" /> },
+    ],
+    github: "https://github.com/ramxcodes/intent-js",
+    live: "https://intent-js.ramx.in",
+    detail: true,
+    projectDetailsPageSlug: "/project/intent-js",
+    isWorking: true,
+  },
 ];

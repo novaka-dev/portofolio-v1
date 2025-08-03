@@ -1,7 +1,8 @@
 import { Container } from "@/components/common/Container";
 import ProjectContent from "@/components/projects/ProjectContent";
+import { ProjectNavigation } from "@/components/projects/ProjectNavigation";
 import { Button } from "@/components/ui/button";
-import { getProjectCaseStudyBySlug } from "@/lib/project";
+import { getProjectCaseStudyBySlug, getProjectNavigation } from "@/lib/project";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -21,6 +22,8 @@ export default async function ProjectCaseStudyPage({
     notFound();
   }
 
+  const navigation = getProjectNavigation(slug);
+
   return (
     <Container className="py-16">
       <div className="space-y-12">
@@ -38,6 +41,12 @@ export default async function ProjectCaseStudyPage({
         <ProjectContent
           frontmatter={caseStudy.frontmatter}
           content={caseStudy.content}
+        />
+
+        {/* Project Navigation */}
+        <ProjectNavigation
+          previous={navigation.previous}
+          next={navigation.next}
         />
       </div>
     </Container>
