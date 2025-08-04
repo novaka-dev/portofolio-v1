@@ -2,7 +2,12 @@ import { Container } from "@/components/common/Container";
 import ProjectContent from "@/components/projects/ProjectContent";
 import { ProjectNavigation } from "@/components/projects/ProjectNavigation";
 import { Button } from "@/components/ui/button";
-import { getProjectCaseStudyBySlug, getProjectNavigation } from "@/lib/project";
+import { Separator } from "@/components/ui/separator";
+import {
+  getProjectCaseStudyBySlug,
+  getProjectNavigation,
+  getRelatedProjectCaseStudies,
+} from "@/lib/project";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -22,10 +27,11 @@ export default async function ProjectCaseStudyPage({
     notFound();
   }
 
-  const navigation = getProjectNavigation(slug);
+  const navigation = await getProjectNavigation(slug);
+  const relatedProjects = await getRelatedProjectCaseStudies(slug, 2);
 
   return (
-    <Container className="py-16">
+    <Container className="pt-16 !pb-32 ">
       <div className="space-y-12">
         {/* back button */}
         <div>
@@ -48,6 +54,78 @@ export default async function ProjectCaseStudyPage({
           previous={navigation.previous}
           next={navigation.next}
         />
+
+        {/* Related Projects */}
+        {relatedProjects.length > 0 && (
+          <div className="space-y-6">
+            <Separator />
+            <div className="space-y-6">
+              <h2>Related Projects</h2>
+              <div className="grid gap-4 md:grid-cols-2">
+                {relatedProjects.map((project) => (
+                  <div
+                    key={project.slug}
+                    className="group rounded-lg border bg-card p-6 transition-colors hover:bg-muted/50"
+                  >
+                    <Link href={`/projects/${project.slug}`}>
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-2">
+                          <h3 className="text-lg font-semibold group-hover:underline">
+                            {project.frontmatter.title}
+                          </h3>
+                          <div className="text-xs">
+                            <div
+                              className={`inline-block rounded px-2 py-1 text-xs font-medium ${
+                                project.frontmatter.status === "Completed"
+                                  ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400"
+                                  : project.frontmatter.status === "Ongoing"
+                                    ? "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400"
+                                    : "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-400"
+                              }`}
+                            >
+                              {project.frontmatter.status
+                                .charAt(0)
+                                .toUpperCase() +
+                                project.frontmatter.status.slice(1)}
+                            </div>
+                          </div>
+                        </div>
+                        <p className="text-sm text-muted-foreground line-clamp-2">
+                          {project.frontmatter.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {project.frontmatter.technologies
+                            .slice(0, 3)
+                            .map((tech) => (
+                              <span
+                                key={tech}
+                                className="rounded bg-muted px-2 py-1 text-xs"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          {project.frontmatter.technologies.length > 3 && (
+                            <span className="rounded bg-muted px-2 py-1 text-xs">
+                              +{project.frontmatter.technologies.length - 3}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Back to Projects CTA */}
+        <div className="text-center">
+          <Separator className="mb-8" />
+          <Button asChild size="lg">
+            <Link href="/projects">View All Projects</Link>
+          </Button>
+        </div>
       </div>
     </Container>
   );
