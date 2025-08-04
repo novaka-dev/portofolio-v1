@@ -28,7 +28,7 @@ export const projects: Project[] = [
     ],
     github: "",
     live: "",
-    projectDetailsPageSlug: "/project/masjid-finance",
+    projectDetailsPageSlug: "/projects/masjid-finance",
     detail: true,
     isWorking: true,
   },
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     github: "https://github.com/ramxcodes/chill-guy",
     live: "https://chillguy.ramx.in",
     detail: true,
-    projectDetailsPageSlug: "/project/chill-guy",
+    projectDetailsPageSlug: "/projects/chill-guy",
     isWorking: true,
   },
   {
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     github: "https://github.com/ramxcodes/intent-js",
     live: "https://intent-js.ramx.in",
     detail: true,
-    projectDetailsPageSlug: "/project/intent-js",
+    projectDetailsPageSlug: "/projects/intent-js",
     isWorking: true,
   },
 ];
