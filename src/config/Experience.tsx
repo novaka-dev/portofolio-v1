@@ -58,7 +58,7 @@ export const experiences: Experience[] = [
     useTimeline: true,
     description: [
       {
-        title: "Front-End Developer Cohort",
+        title: "Front-End Developer",
         date: "Jan 2025 - Apr 2025",
         description:
           "Participated in the Front-End Developer Cohort program focused on foundational web development using HTML, CSS, and JavaScript. Gained practical experience in creating responsive, user-centric interfaces that perform seamlessly across various devices and screen sizes. Leveraged Webpack for modular bundling to improve project scalability and maintainability. Applied Git and GitHub for effective version control and collaboration workflows within a team setting.",
@@ -91,7 +91,7 @@ export const experiences: Experience[] = [
         ],
       },
       {
-        title: "Back-End Developer Cohort",
+        title: "Back-End Developer",
         date: "Jan 2025 - Apr 2025",
         description:
           "Joined the Back-End Developer Cohort program and developed RESTful APIs using Node.js, enhancing my understanding of server-side JavaScript. Implemented routing logic, handled HTTP requests and responses, and explored how to build robust back-end systems that integrate seamlessly with front-end applications. This experience equipped me with the ability to build complete and functional full-stack web applications.",
