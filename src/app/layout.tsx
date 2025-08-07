@@ -32,7 +32,6 @@ export default function RootLayout({
           <Navbar />
           {children}
           <FlyingDragon /> {/* ✅ Tambahin ini */}
-
         </ThemeProvider>
       </body>
     </html>

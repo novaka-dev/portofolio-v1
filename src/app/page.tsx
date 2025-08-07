@@ -2,6 +2,7 @@ import About from "@/components/landing/About";
 import Hero from "@/components/landing/Hero";
 import Experience from "@/components/landing/Experience";
 import Work from "@/components/landing/Projects";
+import Blog from "@/components/landing/Blog";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <About />
       <Experience />
       <Work />
+      <Blog />
     </main>
   );
 }

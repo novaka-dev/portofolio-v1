@@ -2,7 +2,7 @@ import ArrowLeft from "@/components/svgs/ArrowLeft";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-export default function ProjectPage() {
+export default function BlogPostPage() {
   return (
     <div className="flex flex-col h-screen items-center justify-center">
       <h1 className="text-6xl font-bold">Coming Soon</h1>
