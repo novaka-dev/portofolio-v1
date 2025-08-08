@@ -11,6 +11,7 @@ import {
 import { BlogPostPreview } from "@/types/blog";
 import Link from "next/link";
 import { groupPostsByYear } from "@/lib/blog"; // helper function
+import Calender from "../svgs/Calender";
 
 interface BlogTimelineGroupedProps {
   posts: BlogPostPreview[];
@@ -55,9 +56,10 @@ export function BlogTimelineGrouped({ posts }: BlogTimelineGroupedProps) {
               </TimelineHeader>
               <TimelineContent className="text-sm text-muted-foreground flex justify-between border-dashed border-zinc-700 border-b pb-3">
                 <p>{description}</p>
-                <span className="whitespace-nowrap text-sm">
+                <time className="whitespace-nowrap text-sm flex flex-wrap gap-2 items-center">
+                  <Calender className="size-4" />
                   {formattedDate}
-                </span>
+                </time>
               </TimelineContent>
             </TimelineItem>
           );

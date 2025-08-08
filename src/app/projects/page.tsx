@@ -6,7 +6,7 @@ export default function ProjectPage() {
   return (
     <div className="flex flex-col h-screen items-center justify-center">
       <h1 className="text-6xl font-bold">Coming Soon</h1>
-      <span className="mt-4 italic">Cihuyyyyy</span>
+      <span className="mt-4 italic text-muted-foreground">project page</span>
       <div className="mt-4">
         <Button asChild variant="outline" className="group">
           <Link href="/" className="flex items-center space-x-2">

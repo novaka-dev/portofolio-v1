@@ -72,7 +72,7 @@ export const DATA = {
       },
       Project: {
         name: "Projects",
-        url: "/project",
+        url: "/projects",
         icon: Icons.project,
       },
     },
