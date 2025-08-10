@@ -80,7 +80,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 <TooltipTrigger>
                   {project.github && (
                     <Link
-                      href={project.link}
+                      href={project.github}
                       target="_blank"
                       className={
                         "flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"

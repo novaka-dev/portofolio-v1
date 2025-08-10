@@ -50,7 +50,7 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    isCurrent: true,
+    isCurrent: false,
     company: "Dicoding x DBS Foundation",
     position: "Fullstack Web Developer Trainee",
     location: "Remote",
@@ -70,22 +70,22 @@ export const experiences: Experience[] = [
           },
           {
             name: "Css",
-            href: "",
+            href: "https://www-w3-org.translate.goog/Style/CSS/Overview.en.html?_x_tr_sl=en&_x_tr_tl=id&_x_tr_hl=id&_x_tr_pto=tc",
             icon: <Css />,
           },
           {
             name: "Javascript",
-            href: "",
+            href: "https://www.javascript.com/",
             icon: <JavaScript />,
           },
           {
             name: "Webpack",
-            href: "",
+            href: "https://webpack.js.org/",
             icon: <Webpack />,
           },
           {
             name: "Github",
-            href: "",
+            href: "https://github.com/",
             icon: <Github />,
           },
         ],
@@ -98,17 +98,17 @@ export const experiences: Experience[] = [
         technologies: [
           {
             name: "Javascript",
-            href: "",
+            href: "https://www.javascript.com/",
             icon: <JavaScript />,
           },
           {
             name: "Node Js",
-            href: "",
+            href: "https://nodejs.org/en",
             icon: <NodeJs />,
           },
           {
             name: "Postman",
-            href: "",
+            href: "https://www.postman.com/",
             icon: <Postman />,
           },
         ],
@@ -126,37 +126,37 @@ export const experiences: Experience[] = [
           },
           {
             name: "React Js",
-            href: "",
+            href: "https://www.postman.com/",
             icon: <ReactIcon />,
           },
           {
             name: "Tailwind CSS",
-            href: "",
+            href: "https://tailwindcss.com/",
             icon: <TailwindCss />,
           },
           {
             name: "TypeScript",
-            href: "",
+            href: "https://www.typescriptlang.org/",
             icon: <TypeScript />,
           },
           {
             name: "ShadCN UI",
-            href: "",
+            href: "https://ui.shadcn.com/",
             icon: <Shadcn />,
           },
           {
             name: "MongoDB",
-            href: "",
+            href: "https://www.mongodb.com/",
             icon: <MongoDB />,
           },
           {
             name: "Node Js",
-            href: "",
+            href: "https://nodejs.org/en",
             icon: <NodeJs />,
           },
           {
             name: "Postman",
-            href: "",
+            href: "https://www.postman.com/",
             icon: <Postman />,
           },
         ],
@@ -190,27 +190,27 @@ export const experiences: Experience[] = [
           },
           {
             name: "Tailwind CSS",
-            href: "",
+            href: "https://tailwindcss.com/",
             icon: <TailwindCss />,
           },
           {
             name: "Springboot",
-            href: "",
+            href: "https://spring.io/projects/spring-boot",
             icon: <Springboot />,
           },
           {
             name: "Javascript",
-            href: "",
+            href: "https://www.javascript.com/",
             icon: <JavaScript />,
           },
           {
             name: "Postman",
-            href: "",
+            href: "https://www.postman.com/",
             icon: <Postman />,
           },
           {
             name: "Github",
-            href: "",
+            href: "https://github.com/",
             icon: <Github />,
           },
         ],

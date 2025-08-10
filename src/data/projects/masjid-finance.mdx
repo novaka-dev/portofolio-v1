@@ -1,68 +1,117 @@
 ---
 title: "Masjid Finance"
-description: "School mosque financial records"
+description: "Financial management platform for the mosque at SMKN 2 Kota Bekasi, ensuring transparency and ease of record-keeping"
 image: "/project/quest.png"
 technologies:
   [
     "Next.js",
     "React",
-    "TailwindCss",
+    "TailwindCSS",
     "TypeScript",
     "Supabase",
-    "Shadcn/ui",
+    "PostgreSQL",
+    "Shadcn/UI",
     "Prisma",
-    "Vercel",
+    "Clerk",
+    "Recharts",
+    "Arcjet",
   ]
-github: "https://github.com/ramxcodes/mcp-server"
-live: "https://mcp.ramx.in/"
-timeline: "2 weeks"
+github: "https://github.com/novaka-dev/masjid-finance"
+live: "https://masjid-finance.vercel.app"
+timeline: "April 2025"
 role: "Full Stack"
 team: "Solo"
 status: "Completed"
 featured: true
 challenges:
-  ["Protocol Implementation", "Database Integration", "Real-time Operations"]
-learnings: ["MCP Protocol", "Server Architecture", "Database Operations"]
+  [
+    "Role-based Access Control",
+    "Database Integration with Supabase",
+    "Transaction Filtering & Analytics",
+    "Authentication with Clerk",
+  ]
+learnings:
+  [
+    "Prisma ORM",
+    "Role management via Clerk metadata",
+    "Dynamic data visualization",
+    "CRUD operations with Next.js API Routes",
+  ]
 isPublished: true
 ---
 
+# Masjid Finance: School Mosque Financial Management System
+
 ## Overview
 
-The **Appwrite MCP Server** is a powerful Model Context Protocol server that enables seamless integration of database operations into applications. Built with TypeScript and powered by Appwrite, this server provides 7 tools for basic database operations (It's just a demo, not a production ready server).
+**Masjid Finance** is a web-based financial management platform designed for the mosque at **SMKN 2 Kota Bekasi**.
+It streamlines **daily infaq recording**, **expense tracking**, and **financial transparency** by providing clear separation between admin and user functionalities.
 
-## Key Features
+The project was developed with a **role-based access system**, ensuring that only admins can modify records, while regular users can view transaction history and summaries.
 
-### **Tools i've implemented**
+## What Users Can Do
 
-- **Creator Info**: Get detailed information about the developer
-- **Get Document**: Retrieve documents by unique ID
-- **List Documents**: Browse all documents with pagination
-- **Create Document**: Add new documents to collections
-- **Update Document**: Modify existing document data
-- **Delete Document**: Remove documents safely
-- **Upsert Document**: Create or update with single operation
+- **View Transaction History**: Browse all infaq and expense records
+- **Filter & Search**: Find transactions by date range or type
+- **View Financial Summary**: Access aggregated income and expense data
+- **Interactive Charts**: Visual representation of financial trends over time
 
-## API Endpoints
+## Admin Features
 
-### **Core Endpoints**
+- **Add New Transactions**: Record both income and expenses
+- **Edit & Delete Transactions**: Maintain accurate financial records
+- **Bulk Delete**: Remove multiple transactions at once
+- **Role Management**: Admin roles assigned manually via Clerk dashboard
+- **Analytics Dashboard**: View financial insights through charts and tables
 
-```typescript
-// Main MCP endpoint
-GET /api/tools - Get all tools
+## Why I Built This
 
-POST /api/tools/{toolName} - Run tool
-```
+The mosque in our school conducts daily infaq collections, but records were previously stored manually in notebooks.
+This caused difficulties in tracking balances, filtering by date, and providing transparency to the school community.
+**Masjid Finance** solves this by providing a centralized, accessible, and easy-to-use digital system.
 
-### **Tool Operations**
+## Tech Stack
 
-```typescript
-// Document CRUD operations
-tools: {
-  getDocument: "Retrieve single document",
-  listDocuments: "Get paginated document list",
-  createDocument: "Add new document",
-  updateDocument: "Modify existing document",
-  deleteDocument: "Remove document",
-  upsertDocument: "Create or update document"
-}
-```
+### Frontend
+
+- **Next.js** – Full-stack React framework with server-side rendering
+- **TypeScript** – Type safety for better maintainability
+- **TailwindCSS** – Utility-first CSS framework for rapid styling
+- **Shadcn/UI** – Modern, accessible UI components
+- **Recharts** – Data visualization for financial analytics
+
+### Backend
+
+- **Supabase (PostgreSQL)** – Cloud-hosted database for transaction storage
+- **Prisma ORM** – Type-safe database queries and schema management
+- **Clerk** – Authentication and role-based authorization
+- **Arcjet** – Security and request protection
+- **Vercel** – Deployment with global edge network
+
+## Development Highlights
+
+- Implemented **default balance** of `0` for new accounts, removing the initial balance input.
+- Used **Clerk metadata** for role assignment, synced with the `users` table in Supabase.
+- Built **real-time charts** for income/expense trends using Recharts.
+- Added **advanced transaction filtering** (by type, date range, keyword).
+
+## Impact & Results
+
+- **Improved Transparency**: All users can view financial records in real-time.
+- **Faster Data Entry**: Admins can input transactions directly from any device.
+- **Better Financial Insights**: Graphical data makes it easier to present reports.
+- **Secure Role Management**: Prevents unauthorized data modifications.
+
+## Future Enhancements
+
+- **Export to Excel/PDF**: For financial reporting and archiving
+- **Multi-User Admin**: Support for multiple administrators
+- **Offline Mode**: Record transactions without internet and sync later
+- **Mobile-Optimized Dashboard**: Enhanced experience for small screens
+
+## Key Learnings
+
+- **Role-based Access**: Integrated Clerk authentication with database role syncing
+- **Data Visualization**: Learned to transform raw transaction data into insightful charts
+- **Database Optimization**: Applied indexes and query filters for performance
+- **Security Practices**: Implemented access control to protect sensitive financial records
