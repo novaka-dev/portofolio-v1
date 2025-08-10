@@ -10,13 +10,14 @@ import { TextGenerateEffect } from "../ui/text-generate-effect";
 import Skill from "../common/Skill";
 import Link from "next/link";
 import { CardSpotlight } from "../ui/card-spotlight";
-import { HoverBorderGradient } from "../ui/hover-border-gradient";
+
 import { Button } from "../ui/button";
 import CV from "../svgs/CV";
 import Chat from "../svgs/Chat";
 import { AuroraText } from "../magicui/aurora-text";
 import { Spotlight } from "../ui/spotlight";
 import { cn } from "@/lib/utils";
+import { AnimatedShinyText } from "../magicui/animated-shiny-text";
 
 const buttonIcons = {
   CV: CV,
@@ -85,17 +86,19 @@ export default function Hero() {
           )}
         />
 
-        <div className="relative z-10">
+        <div className="relative z-30">
           {/* Area Text Heading */}
           <div className=" flex flex-col gap-y-2 items-center md:items-start text-center md:text-left">
             {/* Badge */}
-            <HoverBorderGradient
-              containerClassName="rounded-full"
-              as="button"
-              className="bg-white dark:bg-black text-dark dark:text-white flex items-center space-x-2 shadow-md text-xs sm:text-sm md:text-base"
+            <div
+              className={cn(
+                " group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800",
+              )}
             >
-              {badge}
-            </HoverBorderGradient>
+              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+                <span>✨ {badge}</span>
+              </AnimatedShinyText>
+            </div>
 
             {/* Judul efek ketik */}
             <TextGenerateEffect
