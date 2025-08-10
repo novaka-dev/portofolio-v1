@@ -91,6 +91,7 @@ export default function Hero() {
             {/* Badge */}
             <HoverBorderGradient
               containerClassName="rounded-full"
+              as="button"
               className="bg-white dark:bg-black text-dark dark:text-white flex items-center space-x-2 shadow-md text-xs sm:text-sm md:text-base"
             >
               {badge}
