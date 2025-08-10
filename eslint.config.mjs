@@ -23,7 +23,8 @@ export default defineConfig([
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
     rules: {
-      "react/react-in-jsx-scope": "off",
+      "react/react-in-jsx-scope": "off", // ga perlu import React di JSX
+      "react/prop-types": "off", // matiin prop-types check
     },
     settings: {
       react: {
