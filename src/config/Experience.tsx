@@ -174,7 +174,7 @@ export const experiences: Experience[] = [
     company: "CV. Teknologi Nusantara",
     position: "Front-end Web Developer",
     location: "Bekasi City, Indonesia (On-site)",
-    image: "/company/dicoding-dbs.png",
+    image: "/company/loginusa.png",
     useTimeline: false,
     description: [
       {

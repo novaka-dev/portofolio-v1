@@ -7,7 +7,7 @@ export default function Blog() {
   const posts = getPublishedBlogPosts();
 
   return (
-    <Container className="mt-20 min-h-screen">
+    <Container className="mt-20">
       <SectionHeading
         heading="Blogs"
         subHeading="Timeline of thoughts"

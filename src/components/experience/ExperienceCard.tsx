@@ -32,9 +32,9 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
           <Image
             src={experience.image}
             alt={experience.company}
-            width={100}
-            height={100}
-            className="size-12 rounded-sm"
+            width={500}
+            height={500}
+            className="size-14 aspect-square rounded-sm"
           />
           <div className="flex flex-col">
             <div className="flex items-center gap-2">

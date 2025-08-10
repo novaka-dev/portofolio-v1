@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/common/ThemeProvider";
 import { Navbar } from "@/components/common/Navbar";
 import FlyingDragon from "@/components/common/FlyingDragon";
+import ReactLenis from "lenis/react";
+import Footer from "@/components/common/Footer";
 
 const hankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
@@ -29,9 +31,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
-          <FlyingDragon /> {/* ✅ Tambahin ini */}
+          <ReactLenis root options={{ lerp: 0.1, duration: 1.5 }}>
+            <Navbar />
+            {children}
+            <FlyingDragon /> {/* ✅ Tambahin ini */}
+            <Footer />
+          </ReactLenis>
         </ThemeProvider>
       </body>
     </html>
