@@ -31,7 +31,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ReactLenis root options={{ lerp: 0.1, duration: 1.5 }}>
+          <ReactLenis root>
             <Navbar />
             {children}
             <FlyingDragon /> {/* ✅ Tambahin ini */}

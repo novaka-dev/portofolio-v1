@@ -102,8 +102,8 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
                   <TimelineIndicator />
                 </TimelineHeader>
                 <TimelineContent>
-                  <p>{item.description}</p>
-                  <div className="mt-4 gap-x-2 flex">
+                  <p className="leading-relaxed">{item.description}</p>
+                  <div className="mt-4 gap-2 flex flex-wrap">
                     {item.technologies?.map((tech, techIndex: number) => (
                       <Skill key={techIndex} name={tech.name} href={tech.href}>
                         {tech.icon}

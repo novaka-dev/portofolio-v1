@@ -101,17 +101,17 @@ export const socialLinks = [
   },
   {
     name: "LinkedIn",
-    href: "",
+    href: "https://www.linkedin.com/in/novaka-saputra-a56229322/",
     icon: <LinkedIn />,
   },
   {
     name: "Github",
-    href: "",
+    href: "https://github.com/novaka-dev",
     icon: <Github />,
   },
   {
     name: "Email",
-    href: "",
+    href: "mailto:novakarizkyhs@gmail.com",
     icon: <Mail />,
   },
 ];

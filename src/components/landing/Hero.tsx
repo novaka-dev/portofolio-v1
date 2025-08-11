@@ -1,23 +1,18 @@
-import {
-  concert_one,
-  heroConfig,
-  skillComponents,
-  socialLinks,
-} from "@/config/Hero";
+import { heroConfig, skillComponents, socialLinks } from "@/config/Hero";
 import { parseTemplate } from "@/lib/hero";
 import { Container } from "../common/Container";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 import Skill from "../common/Skill";
 import Link from "next/link";
-import { CardSpotlight } from "../ui/card-spotlight";
 
 import { Button } from "../ui/button";
 import CV from "../svgs/CV";
 import Chat from "../svgs/Chat";
-import { AuroraText } from "../magicui/aurora-text";
+
 import { Spotlight } from "../ui/spotlight";
 import { cn } from "@/lib/utils";
 import { AnimatedShinyText } from "../magicui/animated-shiny-text";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 const buttonIcons = {
   CV: CV,
@@ -74,7 +69,7 @@ export default function Hero() {
       {/* ✅ Bottom Gradient untuk transisi ke About */}
       <div className="pointer-events-none absolute bottom-0 left-0 w-full h-36 bg-gradient-to-b from-transparent to-transparent dark:to-black z-10" />
 
-      <Container className="mb-14">
+      <Container className="mb-14 py-10">
         {/* ✅ Spotlight (masih bisa pakai absolute) */}
         <Spotlight
           className={cn(
@@ -88,7 +83,7 @@ export default function Hero() {
 
         <div className="relative z-30">
           {/* Area Text Heading */}
-          <div className=" flex flex-col gap-y-2 items-center md:items-start text-center md:text-left">
+          <div className=" flex flex-col gap-y-2 md:items-start md:text-left">
             {/* Badge */}
             <div
               className={cn(
@@ -107,56 +102,46 @@ export default function Hero() {
             />
 
             {/* Deskripsi */}
-            <div className="mt-2 sm:mt-3 md:mt-4 flex flex-wrap gap-y-2 gap-x-1.5 justify-center md:justify-start text-neutral-500 text-sm sm:text-base md:text-lg">
+            <div className="mt-2 sm:mt-3 md:mt-4 flex flex-wrap gap-y-2 gap-x-1.5 md:justify-start text-neutral-500 text-sm sm:text-base md:text-lg">
               {renderDescription()}
             </div>
           </div>
 
-          {/* Area GetTouch */}
-          <div className="mt-8 w-full ">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-              {/* Text + Button */}
-              <div className=" flex flex-col items-center text-center lg:items-center lg:text-center w-full lg:w-[300px]">
-                <h1
-                  className={`${concert_one.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold `}
+          {/* Buttons */}
+          <div className="mt-8 flex gap-4">
+            {buttons.map((button, index) => {
+              const IconComponent =
+                buttonIcons[button.icon as keyof typeof buttonIcons];
+              return (
+                <Button
+                  key={index}
+                  variant={button.variant as "outline" | "default"}
                 >
-                  Get In <AuroraText speed={2}>Toutch</AuroraText>
-                </h1>
+                  {IconComponent && <IconComponent />}
+                  <Link href={button.href}>{button.text}</Link>
+                </Button>
+              );
+            })}
+          </div>
 
-                <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4 py-4 ">
-                  {buttons.map((button, index) => {
-                    const IconComponent =
-                      buttonIcons[button.icon as keyof typeof buttonIcons];
-                    return (
-                      <Button
-                        asChild
-                        key={index}
-                        variant={(button.variant as "outline") || "default"}
-                      >
-                        <Link href={button.href}>
-                          {IconComponent && <IconComponent />}
-                          {button.text}
-                        </Link>
-                      </Button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Card Sosial Media */}
-              <div className="flex flex-wrap justify-center lg:justify-end gap-4 w-full lg:w-auto">
-                {socialLinks.map((link) => (
-                  <Link href={link.href} key={link.name}>
-                    <CardSpotlight className="lg:min-w-[140px] md:min-w-[150px] max-w-[140px] shadow-xl light:bg-neutral-800">
-                      <span className="text-white flex items-center justify-center mx-auto w-14 h-14 ">
-                        {link.icon}
-                      </span>
-                      <p className="text-center text-white">{link.name}</p>
-                    </CardSpotlight>
+          {/* Social Links */}
+          <div className="mt-8 flex gap-2">
+            {socialLinks.map((link) => (
+              <Tooltip key={link.name} delayDuration={0}>
+                <TooltipTrigger asChild>
+                  <Link
+                    href={link.href}
+                    key={link.name}
+                    className="text-neutral-500 flex items-center gap-2"
+                  >
+                    <span className="size-6">{link.icon}</span>
                   </Link>
-                ))}
-              </div>
-            </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{link.name}</p>
+                </TooltipContent>
+              </Tooltip>
+            ))}
           </div>
         </div>
       </Container>

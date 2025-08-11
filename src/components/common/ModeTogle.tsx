@@ -1,9 +1,10 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import Sun from "../svgs/Sun";
+import Moon from "../svgs/Moon";
 
 export function ModeToggle() {
   const { setTheme, theme } = useTheme();

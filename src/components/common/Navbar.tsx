@@ -12,13 +12,25 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { Dock, DockIcon } from "@/components/magicui/dock";
-import { ModeToggle } from "./ModeTogle";
+
 import { DATA } from "../../config/Navbar";
 import { Container } from "./Container";
 import { usePathname } from "next/navigation";
+import { ModeToggle } from "./ModeTogle";
 
 export function Navbar() {
   const pathname = usePathname();
+
+  // ✅ Hooks pindahin ke dalam function component
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 640);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <Container className="flex items-center justify-center">
       <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50">
@@ -33,9 +45,11 @@ export function Navbar() {
                       aria-label={item.label}
                       className={cn(
                         buttonVariants({ variant: "ghost", size: "icon" }),
-                        "size-12 rounded-full ",
-                        pathname === item.href &&
-                          "bg-accent text-accent-foreground transition-colors duration-500"
+                        "size-12 rounded-full",
+                        // ✅ Highlight hanya kalau bukan mobile
+                        !isMobile &&
+                          pathname === item.href &&
+                          "bg-accent text-accent-foreground transition-colors duration-500",
                       )}
                     >
                       <item.icon className="size-4" />
@@ -58,8 +72,9 @@ export function Navbar() {
                       className={cn(
                         buttonVariants({ variant: "ghost", size: "icon" }),
                         "size-12 rounded-full transition-colors duration-500",
-                        pathname === portofolio.url &&
-                          "bg-accent text-accent-foreground"
+                        !isMobile &&
+                          pathname === portofolio.url &&
+                          "bg-accent text-accent-foreground",
                       )}
                     >
                       <portofolio.icon className="size-4" />
@@ -82,8 +97,9 @@ export function Navbar() {
                       className={cn(
                         buttonVariants({ variant: "ghost", size: "icon" }),
                         "size-12 rounded-full transition-colors duration-500",
-                        pathname === social.url &&
-                          "bg-accent text-accent-foreground"
+                        !isMobile &&
+                          pathname === social.url &&
+                          "bg-accent text-accent-foreground",
                       )}
                     >
                       <social.icon className="size-4" />
