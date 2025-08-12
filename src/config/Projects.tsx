@@ -15,7 +15,7 @@ export const projects: Project[] = [
     title: "Masjid Finance",
     description:
       "A role-based financial management platform for the mosque at SMKN 2 Kota Bekasi. Tracks daily infaq, expenses, and provides real-time analytics for transparency.",
-    image: "/project/quest.png",
+    image: "/project/masjid-finance.png",
     // video: "https://ik.imagekit.io/youraccount/masjid-finance.mp4?tr=orig", // ganti dengan link video demo kalo ada
     link: "",
     technologies: [
