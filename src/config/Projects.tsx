@@ -3,6 +3,7 @@ import NextJs from "@/components/technologies/NextJs";
 import PostgreSQL from "@/components/technologies/PostgreSQL";
 import Prisma from "@/components/technologies/Prisma";
 import ReactIcon from "@/components/technologies/ReactIcon";
+import Redis from "@/components/technologies/Redis";
 import Shadcn from "@/components/technologies/Shadcn";
 import Supabase from "@/components/technologies/Supabase";
 import TailwindCss from "@/components/technologies/TailwindCss";
@@ -17,7 +18,7 @@ export const projects: Project[] = [
       "A role-based financial management platform for the mosque at SMKN 2 Kota Bekasi. Tracks daily infaq, expenses, and provides real-time analytics for transparency.",
     image: "/project/masjidfinance.png",
     // video: "https://ik.imagekit.io/youraccount/masjid-finance.mp4?tr=orig", // ganti dengan link video demo kalo ada
-    link: "",
+    link: "https://masjid-finance.vercel.app",
     technologies: [
       { name: "Next.js", icon: <NextJs key={"nextjs"} /> },
       { name: "React", icon: <ReactIcon key={"react"} /> },
@@ -37,24 +38,29 @@ export const projects: Project[] = [
     isWorking: true,
   },
 
-  // {
-  //   title: "I'm a chill guy",
-  //   description:
-  //     "AI-powered GitHub profile roaster with intelligent analysis, witty commentary, and social sharing features",
-  //   image: "/project/chillguy.png",
-  //   link: "https://chillguy.ramx.in",
-  //   technologies: [
-  //     { name: "React", icon: <ReactIcon key="react" /> },
+  {
+    title: "Vayanime",
+    description:
+      "A modern anime streaming website featuring spotlight carousel, episode lists, search functionality, and multi-server support. Built with cutting-edge web technologies for a smooth viewing experience.",
+    image: "/project/vayanime.png",
+    link: "https://chillguy.ramx.in",
+    technologies: [
+      { name: "React", icon: <ReactIcon key="react" /> },
+      { name: "TypeScript", icon: <TypeScript key="typescript" /> },
+      { name: "Next.js", icon: <NextJs key="nextjs" /> },
+      { name: "Vercel", icon: <Vercel key="vercel" /> },
+      { name: "shadcn/ui", icon: <Shadcn key="shadcn" /> },
+      { name: "Redis", icon: <Redis key="redis" /> },
+      { name: "Prisma", icon: <Prisma key="prisma" /> },
+      { name: "Tailwind CSS", icon: <TailwindCss key="tailwindcss" /> },
+    ],
+    github: "https://github.com/novaka-dev/vayanime",
+    live: "https://chillguy.ramx.in",
+    detail: true,
+    projectDetailsPageSlug: "/projects/vayanime",
+    isWorking: false,
+  },
 
-  //     { name: "Vercel", icon: <Vercel key="vercel" /> },
-  //     { name: "Tailwind CSS", icon: <TailwindCss key="tailwindcss" /> },
-  //   ],
-  //   github: "https://github.com/ramxcodes/chill-guy",
-  //   live: "https://chillguy.ramx.in",
-  //   detail: true,
-  //   projectDetailsPageSlug: "/projects/chill-guy",
-  //   isWorking: true,
-  // },
   // {
   //   title: "Intent JS",
   //   description:
