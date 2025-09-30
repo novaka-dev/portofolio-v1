@@ -19,7 +19,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Card className="group h-full w-full overflow-hidden p-0 transition-all border-gray-200 dark:border-gray-800 shadow-none">
+    <Card className="group flex flex-col h-full w-full overflow-hidden p-0 transition-all border-gray-200 dark:border-gray-800 shadow-none">
       <CardHeader className="p-0">
         <div className="group aspect-video overflow-hidden relative">
           <Image
@@ -54,7 +54,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           )}
         </div>
       </CardHeader>
-      <CardContent className="px-6">
+      <CardContent className="px-6 flex-1">
         <div className="space-y-4">
           {/* project title and title */}
           <div className="flex justify-between items-center gap-4">
@@ -126,7 +126,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Progress Web */}
       {project.detail && (
-        <CardFooter className="p-6 pt-0 flex justify-between">
+        <CardFooter className="p-6 pt-0 flex justify-between mt-auto">
           <div
             className={` flex items-center gap-2 rounded-md px-2 py-1 text-xs ${project.isWorking ? "border-green-300 bg-green-500/10" : "border-red-300 bg-red-500/10"} `}
           >
