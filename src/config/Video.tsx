@@ -21,4 +21,14 @@ export const videos: Video[] = [
     title: "The Best Way to Learn React",
     videoUrl: "https://www.tiktok.com/@vakure/video/7550304711212207368",
   },
+  {
+    id: "5",
+    title: "The Best Way to Learn React",
+    videoUrl: "https://www.tiktok.com/@vakure/video/7435215762664934674",
+  },
+  {
+    id: "6",
+    title: "The Best Way to Learn React",
+    videoUrl: "https://www.tiktok.com/@vakure/video/7511212286426631445",
+  },
 ];
