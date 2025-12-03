@@ -1,9 +1,11 @@
-import { videos } from "@/data/videos";
+import { getPublishedBlogPosts } from "@/lib/blog";
 import { Container } from "../common/Container";
 import SectionHeading from "../common/SectionHeading";
-import VideoList from "../video/VideoList";
+import { BlogList } from "../blog/BlogList";
 
 export default function Blog() {
+  const posts = getPublishedBlogPosts();
+
   return (
     <Container className="mt-20">
       <SectionHeading
@@ -12,7 +14,7 @@ export default function Blog() {
         className="text-center"
       />
       <div className="mt-8">
-        <VideoList className="mt-8" projects={videos} />
+        <BlogList posts={posts} />
       </div>
     </Container>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { Video } from "@/data/videos";
+import { Video } from "@/types/video";
 import VideoCard from "./VideoCard";
 
 interface VideoListProps {
@@ -18,9 +18,7 @@ export default function VideoList({ projects, className }: VideoListProps) {
   }
 
   return (
-    <div
-      className={`grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 ${className}`}
-    >
+    <div className={`grid grid-cols-1 gap-4 md:grid-cols-2 ${className}`}>
       {projects.map((project) => (
         <VideoCard key={project.id} video={project} />
       ))}
