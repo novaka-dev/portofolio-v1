@@ -66,8 +66,8 @@ export const DATA = {
         icon: Icons.work,
       },
       Blog: {
-        name: "Blogs",
-        url: "/blog",
+        name: "Videos",
+        url: "/video",
         icon: Icons.blog,
       },
       Project: {
